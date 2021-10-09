@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #fff;
+	font-family: sans-serif;
+}
+textarea {
+	color: #111;
+	padding: 4px 0 0 4px;
+	outline: none;
+}
+/* whole keyboard */
+.keyboard {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+/* styles for options to toggle type of keyboard */
+.keyboard-options {
+	position: fixed;
+	top: 40%;
+	width: 40px;
+	min-height: 0;
+}
+.toggle-keyboard {
+	width: 100%;
+	height: 7vh;
+	background-image: linear-gradient(to top right, #293e4c, #050709, #293e4c, #050709);
+	top: 40%;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	cursor: pointer;
+	box-shadow: 2px 1px 10px#111;
+}
+
+/* styles for keyboard container */
+.keyboard-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 45vh;
+	background-color: #050709;
+	animation: toggleKeyboard 1s;
+}
+@keyframes toggleKeyboard {
+	from {
+		height: 0;
+	}
+	to {
+		height: 45vh;
+	}
+}
+.disNone {
+	display: none;
+}
+.left-side {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 80%;
+	margin-right: 15px;
+	font-size: 1.2rem;
+}
+.right-side {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 20%;
+	font-size: 1.1rem;
+}
+.left-side > .keys-block {
+	display: grid;
+	grid-template-columns: repeat(15, 1fr);
+	grid-gap: 5px;
+	min-height: 7vh;
+}
+.right-side > .keys-block {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 5px;
+	height: 7vh;
+}
+.keys-block > div {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-image: linear-gradient(to top right, #293e4c, #050709, #293e4c, #050709);
+	padding: 5px 0 0 3px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #293e4c, -1px -1px 1px #293e4c;
+}
+.top-down-arrows div:hover,
+.keys-block > div:hover {
+	box-shadow: none;
+}
+.deselect {
+	pointer-events: none;
+	opacity: 0.5;
+}
+.keys-block > div div:nth-child(2) {
+	text-align: center;
+}
+.top-down-arrows {
+	padding: 0 !important;
+	background-image: none !important;
+	box-shadow: none !important;
+}
+.top-down-arrows div {
+	height: 23px;
+	background-image: linear-gradient(to top right, #293e4c, #050709, #293e4c, #050709);
+	box-shadow: 1px 1px 1px #293e4c, -1px -1px 1px #293e4c;
+	text-align: center;
+	margin: 2px 0;
+}
+.enter {
+	grid-column: 13/16;
+}
+.left-shift-key {
+	width: 190px !important;
+}
+.right-shift-key {
+	grid-column: 12/16;
+}
+.space-key {
+	grid-column: 5/10;
+}
+.tab {
+	width: 100px !important;
+}
+.caps {
+	width: 145px !important;
+}
+.backspace {
+	width: 120px !important;
+}
